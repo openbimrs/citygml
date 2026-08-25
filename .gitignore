@@ -1,0 +1,7 @@
+/target/
+*.rs.bk
+.DS_Store
+.idea/
+.vscode/
+# Normative standards and schemas are not repository artifacts.
+/references/
