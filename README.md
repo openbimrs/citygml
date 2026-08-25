@@ -45,7 +45,7 @@ The alias defines no independent API. Do not depend on both packages directly.
 
 ## Install
 
-After version 0.1.0 has been published, choose one package name:
+Choose one package name:
 
 ```bash
 cargo add openbim-citygml
@@ -53,7 +53,7 @@ cargo add openbim-citygml
 cargo add citygml
 ```
 
-Nothing in this repository has been published merely by creating this candidate.
+Version 0.1.0 reserves both package names as an explicit scaffold.
 
 ## Official references
 
@@ -73,7 +73,7 @@ Rust 1.85 or newer is required. Run the same gate as CI:
 ```
 
 The gate checks formatting, build, tests, Clippy, documentation, alias purity,
-the canonical package archive, and the alias package file list. See
+and complete package archives for both crates. See
 [`docs/architecture.md`](docs/architecture.md) for the boundary and release
 ordering.
 

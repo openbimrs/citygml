@@ -1,6 +1,6 @@
 # Repository instructions
 
-This is the standalone candidate repository for OpenBIM.rs CityGML packages.
+This is the standalone canonical repository for OpenBIM.rs CityGML packages.
 Version 0.1.0 is a reserved scaffold, not an implementation.
 
 ## Directories

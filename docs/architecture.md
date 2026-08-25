@@ -46,10 +46,8 @@ provenance must be verified before any external artifact is committed or packed.
 
 ## Packaging order
 
-The canonical package must be packaged and, if separately authorized, published
-before the alias because Cargo verifies registry dependencies while packaging.
-Before the canonical 0.1.0 exists on crates.io, the gate fully packages
-`openbim-citygml` and runs `cargo package --list` for `citygml`. Workspace build,
-test, Clippy, rustdoc, and alias-purity checks still cover both crates locally.
+The canonical package must be published before its exact-version alias because
+Cargo verifies registry dependencies while packaging. The steady-state gate
+fully packages and verifies both crates.
 
 Publication and pushing are intentionally outside the gate.

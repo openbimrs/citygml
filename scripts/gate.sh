@@ -18,7 +18,4 @@ RUSTDOCFLAGS="-D warnings" cargo doc --workspace --all-features --no-deps
 ./scripts/check-alias-purity.sh
 ./scripts/test-alias-purity.sh
 cargo package -p openbim-citygml
-# Cargo cannot verify a registry dependency until the canonical package exists.
-# Until first publication, inspect the alias archive file set after the workspace
-# and semantic purity checks above have passed.
-cargo package --list -p citygml
+cargo package -p citygml
