@@ -11,6 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Reserved canonical `openbim-citygml` scaffold with an explicit status constant.
 - Exact-version, pure-re-export `citygml` alias package.
-- Standalone CI, package, documentation, and alias-purity gates.
+- Standalone CI, package, documentation, and mutation-verified alias-purity gates.
 
 [0.1.0]: https://crates.io/crates/openbim-citygml/0.1.0
