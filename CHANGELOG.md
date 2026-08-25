@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The steady-state release gate now fully packages the published `citygml`
   alias.
+- Alias purity now fails closed over Cargo dependency, feature, target, build,
+  and source shape, with 19 mutation probes and exact package allowlists.
+- CI now pins its runner and action revisions; local fallback targets are unique
+  per gate invocation.
 
 ## [0.1.0] - 2026-08-25
 
