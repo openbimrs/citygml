@@ -3,7 +3,7 @@ name = "citygml"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.85"
-license = "MIT"
+license = "AGPL-3.0-or-later"
 authors = ["point-grey"]
 repository = "https://github.com/openbimrs/citygml"
 homepage = "https://github.com/openbimrs/citygml"
@@ -12,7 +12,7 @@ readme = "README.md"
 description = "Short-name pure re-export of the reserved OpenBIM.rs CityGML scaffold."
 keywords = ["citygml", "openbim", "geospatial", "city-model"]
 categories = ["science::geo"]
-include = ["src/**", "Cargo.toml", "README.md", "LICENSE"]
+include = ["src/**", "Cargo.toml", "README.md", "LICENSE", "LICENSES/MIT.txt"]
 publish = true
 
 [dependencies]

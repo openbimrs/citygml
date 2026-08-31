@@ -13,7 +13,7 @@ codes and includes a semantic purity check for the short-name alias.
 
 ## Conventions
 
-- Rust 2021; MSRV 1.85; MIT; pure Rust.
+- Rust 2021; MSRV 1.85; AGPL-3.0-or-later; pure Rust.
 - Keep `citygml` an exact-version pure re-export of `openbim-citygml`.
 - Do not vendor OGC standards, schemas, or reference corpora.
 - Update capability tables only when executable implementation and tests exist.

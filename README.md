@@ -79,4 +79,4 @@ ordering.
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE).
+AGPL-3.0-or-later — see [`LICENSE`](LICENSE).
