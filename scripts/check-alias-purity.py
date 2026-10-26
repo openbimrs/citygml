@@ -102,8 +102,8 @@ if canonical["version"] != VERSION or alias["version"] != VERSION:
     fail(f"both package versions must be {VERSION}")
 if alias.get("edition") != "2021":
     fail("alias package edition must be 2021")
-if alias.get("rust_version") != "1.85":
-    fail("alias package rust-version must be 1.85")
+if alias.get("rust_version") != "1.99":
+    fail("alias package rust-version must be 1.99")
 if alias.get("publish") is not None:
     fail("alias package must remain publishable to crates.io")
 if alias.get("features"):

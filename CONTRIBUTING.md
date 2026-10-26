@@ -13,7 +13,7 @@ without an explicit, verified redistribution grant.
 
 ## Local verification
 
-Use Rust 1.85 or newer and run:
+Use Rust 1.99 or newer and run:
 
 ```bash
 ./scripts/gate.sh

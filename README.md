@@ -4,7 +4,7 @@
 [![openbim-citygml](https://img.shields.io/crates/v/openbim-citygml.svg)](https://crates.io/crates/openbim-citygml)
 [![citygml](https://img.shields.io/crates/v/citygml.svg)](https://crates.io/crates/citygml)
 [![docs.rs](https://docs.rs/openbim-citygml/badge.svg)](https://docs.rs/openbim-citygml)
-[![MSRV](https://img.shields.io/badge/MSRV-1.85-blue)](https://www.rust-lang.org)
+[![MSRV](https://img.shields.io/badge/MSRV-1.99-blue)](https://www.rust-lang.org)
 
 This repository reserves package architecture for future OpenBIM.rs CityGML
 work. Version 0.1.0 is deliberately a **reserved scaffold**, not a CityGML
@@ -66,7 +66,7 @@ other standards artifact is copied or vendored in this repository.
 
 ## Development
 
-Rust 1.85 or newer is required. Run the same gate as CI:
+Rust 1.99 or newer is required. Run the same gate as CI:
 
 ```bash
 ./scripts/gate.sh
