@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ALIAS_PACKAGE = "citygml"
 CANONICAL_PACKAGE = "openbim-citygml"
 CANONICAL_CRATE = "openbim_citygml"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 
 def fail(message: str) -> NoReturn:

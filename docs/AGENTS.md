@@ -1,7 +1,7 @@
 # Documentation instructions
 
 Documentation must distinguish current executable behavior from plans. For the
-0.1.0 scaffold, only package metadata, `PACKAGE_STATUS`, and alias re-export
+0.1.1 scaffold, only package metadata, `PACKAGE_STATUS`, and alias re-export
 behavior are available. Never imply CityGML parsing, writing, modeling,
 validation, version support, or OGC conformance.
 

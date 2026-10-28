@@ -3,7 +3,7 @@
 ## Repository role
 
 This repository is an independently buildable home for two CityGML package
-names. Release 0.1.0 establishes metadata and package boundaries only; it does
+names. Release 0.1.1 establishes metadata and package boundaries only; it does
 not implement CityGML.
 
 ## Dependency direction
@@ -13,10 +13,10 @@ citygml  --->  openbim-citygml
 (alias)         (canonical scaffold)
 ```
 
-`openbim-citygml` owns any future public API. In 0.1.0 that API is limited to
+`openbim-citygml` owns any future public API. In 0.1.1 that API is limited to
 `PACKAGE_STATUS`. `citygml` is a compatibility name and must never define its
 own type, function, constant, module, trait, macro, or behavior. Its dependency
-uses `version = "=0.1.0"` so canonical and alias APIs cannot drift.
+uses `version = "=0.1.1"` so canonical and alias APIs cannot drift.
 
 The semantic checker strips Rust comments, tokenizes the remaining alias source,
 and requires precisely the canonical glob re-export. It also verifies the exact
@@ -46,8 +46,8 @@ provenance must be verified before any external artifact is committed or packed.
 
 ## Packaging order
 
-The canonical package must be published before its exact-version alias because
-Cargo verifies registry dependencies while packaging. The steady-state gate
-fully packages and verifies both crates.
+The canonical package must be published before its exact-version alias. The
+gate packages both crates together and checks the alias against the candidate
+canonical package; `cargo publish` (canonical first) does the registry check.
 
 Publication and pushing are intentionally outside the gate.

@@ -8,7 +8,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-EXPECTED = {'openbim-citygml': ['.cargo_vcs_info.json', 'Cargo.lock', 'Cargo.toml', 'Cargo.toml.orig', 'LICENSE', 'LICENSES/MIT.txt', 'README.md', 'src/lib.rs'], 'citygml': ['.cargo_vcs_info.json', 'Cargo.lock', 'Cargo.toml', 'Cargo.toml.orig', 'LICENSE', 'LICENSES/MIT.txt', 'README.md', 'src/lib.rs']}
+EXPECTED = {'openbim-citygml': ['.cargo_vcs_info.json', 'Cargo.lock', 'Cargo.toml', 'Cargo.toml.orig', 'LICENSE', 'LICENSES/LicenseRef-Commercial.txt', 'LICENSES/MIT.txt', 'NOTICE', 'README.md', 'src/lib.rs'], 'citygml': ['.cargo_vcs_info.json', 'Cargo.lock', 'Cargo.toml', 'Cargo.toml.orig', 'LICENSE', 'LICENSES/LicenseRef-Commercial.txt', 'LICENSES/MIT.txt', 'NOTICE', 'README.md', 'src/lib.rs']}
+
+EXPRESSION = 'license = "AGPL-3.0-or-later OR LicenseRef-Commercial"'
+SHIPPED_LICENCES = ("LICENSE", "NOTICE", "LICENSES/LicenseRef-Commercial.txt")
 
 errors: list[str] = []
 for package, expected in EXPECTED.items():
@@ -27,6 +30,16 @@ for package, expected in EXPECTED.items():
         errors.append(
             f"{package} payload mismatch: missing={missing}, unexpected={unexpected}"
         )
+# Each crate ships byte-identical copies of the root licence texts and notice
+# and declares the dual expression.
+for package in EXPECTED:
+    crate = ROOT / package
+    for name in SHIPPED_LICENCES:
+        shipped = crate / name
+        if not shipped.is_file() or shipped.read_bytes() != (ROOT / name).read_bytes():
+            errors.append(f"{package}: {name} is missing or differs from the root")
+    if EXPRESSION not in (crate / "Cargo.toml").read_text(encoding="utf-8").splitlines():
+        errors.append(f"{package}: unexpected license expression")
 if errors:
     for error in errors:
         print(f"package contents error: {error}", file=sys.stderr)

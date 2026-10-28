@@ -1,6 +1,6 @@
 # Canonical package instructions
 
-This package is the canonical API owner. For 0.1.0, keep it a reserved scaffold
+This package is the canonical API owner. For 0.1.1, keep it a reserved scaffold
 whose only public item is `PACKAGE_STATUS`. Do not add or claim CityGML parsing,
 writing, modeling, validation, schema support, profile support, or conformance
 without an approved implementation scope and executable tests.

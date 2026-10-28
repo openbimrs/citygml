@@ -7,12 +7,12 @@
 [![MSRV](https://img.shields.io/badge/MSRV-1.99-blue)](https://www.rust-lang.org)
 
 This repository reserves package architecture for future OpenBIM.rs CityGML
-work. Version 0.1.0 is deliberately a **reserved scaffold**, not a CityGML
+work. Version 0.1.1 is deliberately a **reserved scaffold**, not a CityGML
 implementation.
 
 ## Capability status
 
-| Capability | Status in 0.1.0 |
+| Capability | Status in 0.1.1 |
 | --- | --- |
 | Canonical package and status constant | Available |
 | Short-name package as an exact-version pure re-export | Available |
@@ -53,7 +53,7 @@ cargo add openbim-citygml
 cargo add citygml
 ```
 
-Version 0.1.0 reserves both package names as an explicit scaffold.
+Version 0.1.1 reserves both package names as an explicit scaffold.
 
 ## Official references
 
@@ -79,4 +79,4 @@ ordering.
 
 ## License
 
-AGPL-3.0-or-later — see [`LICENSE`](LICENSE).
+`AGPL-3.0-or-later OR LicenseRef-Commercial` — see [`LICENSE`](LICENSE) and [`LICENSING.md`](LICENSING.md); a commercial licence is available from the copyright holder named in `NOTICE`.
