@@ -82,7 +82,7 @@ def append_lib_setting(setting: str) -> None:
 
 def insert_package_field(field: str) -> None:
     text = MANIFEST.read_text()
-    marker = 'version = "0.1.0"\n'
+    marker = 'version = "0.1.1"\n'
     assert_true(text.count(marker) == 1, "package version marker is not unique")
     MANIFEST.write_text(text.replace(marker, marker + field + "\n", 1))
 
@@ -96,9 +96,9 @@ try:
     reject("independent-type")
 
     text = MANIFEST.read_text()
-    assert_true(text.count('version = "=0.1.0"') == 1, "exact dependency marker is not unique")
-    MANIFEST.write_text(text.replace('version = "=0.1.0"', 'version = "0.1.0"'))
-    reject("loose-version", lambda: assert_true(dependency()["req"] != "=0.1.0", "loose mutation inactive"))
+    assert_true(text.count('version = "=0.1.1"') == 1, "exact dependency marker is not unique")
+    MANIFEST.write_text(text.replace('version = "=0.1.1"', 'version = "0.1.1"'))
+    reject("loose-version", lambda: assert_true(dependency()["req"] != "=0.1.1", "loose mutation inactive"))
 
     text = MANIFEST.read_text()
     assert_true(text.count("[dependencies]") == 1, "dependency table is not unique")
@@ -154,11 +154,11 @@ try:
     reject("package-publish-disabled", lambda: assert_true(alias_package()["publish"] == [], "publish mutation inactive"))
 
     text = MANIFEST.read_text()
-    marker = 'version = "0.1.0"'
+    marker = 'version = "0.1.1"'
     assert_true(text.count(marker) == 1, "alias version marker is not unique")
-    MANIFEST.write_text(text.replace(marker, 'version = "0.1.1"', 1))
+    MANIFEST.write_text(text.replace(marker, 'version = "0.1.2"', 1))
     updated = alias_package(locked=False)
-    assert_true(updated["version"] == "0.1.1", "version mutation inactive")
+    assert_true(updated["version"] == "0.1.2", "version mutation inactive")
     reject("package-version")
 
     insert_package_field('links = "alias-contract-probe"')

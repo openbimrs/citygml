@@ -8,4 +8,4 @@ This file records possible future investigation, not promised functionality.
 4. Design bounded parsing and writing APIs before implementation.
 5. Add tests and update capability claims only after behavior exists.
 
-Version 0.1.0 intentionally implements none of these items.
+Version 0.1.1 intentionally implements none of these items.

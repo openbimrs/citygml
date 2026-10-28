@@ -19,5 +19,6 @@ RUSTDOCFLAGS="-D warnings" cargo doc --workspace --all-features --no-deps
 ./scripts/check-alias-purity.sh
 ./scripts/test-alias-purity.sh
 python3 scripts/check-package-contents.py
-cargo package --locked -p openbim-citygml
-cargo package --locked -p citygml
+# Package both crates together: cargo verifies the alias against the packaged
+# canonical crate through its temporary registry.
+cargo package --locked -p openbim-citygml -p citygml
