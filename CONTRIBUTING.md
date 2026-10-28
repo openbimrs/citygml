@@ -23,6 +23,18 @@ Keep `citygml/src/lib.rs` a pure re-export and keep its canonical dependency
 pinned with an exact `=` version. Add entries to `CHANGELOG.md` for user-visible
 changes.
 
+## Releasing
+
+Releases are published by `.github/workflows/release.yml` through crates.io
+trusted publishing; there is no token and no manual `cargo publish`. Bump the
+version(s), date the `CHANGELOG.md` section, merge to `main`, then push an
+annotated tag `v<version>` on that commit. The workflow checks that the tag is
+on `main` and matches the manifest and changelog, runs `scripts/gate.sh`, then
+publishes `openbim-citygml` and then its exact-version alias `citygml` in the `crates.io` environment. Already-published versions
+are skipped, so a failed run can be re-run. crates.io trusts exactly the
+repository, the file name `release.yml` and the environment `crates.io`; keep
+all three. Run the workflow by hand with a tag name to rehearse (gate only).
+
 ## Licensing contributions
 
 OpenBIM.rs is dual-licensed: `AGPL-3.0-or-later OR LicenseRef-Commercial`
